@@ -1,0 +1,8 @@
+assemble:
+    - from: build/static
+      into: static
+liferay-slider-input-cx-js-import-maps-entry:
+    bareSpecifier: liferaySliderInputCX
+    name: Liferay Slider Input CX JS Import Maps Entry
+    type: jsImportMapsEntry
+    url: assets/index-*.js
