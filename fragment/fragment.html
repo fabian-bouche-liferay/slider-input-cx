@@ -1,0 +1,35 @@
+<div class="slider-numeric-input">
+	<div class="form-group [#if input.errorMessage?has_content]has-error[/#if] mb-0">
+		<label class="[#if !input.showLabel || !input.label?has_content]sr-only[/#if]" for="${fragmentEntryLinkNamespace}-numeric-input" id="${fragmentEntryLinkNamespace}-numeric-input-label">
+			${htmlUtil.escape(input.label)} [#if input.readOnly](${languageUtil.get(locale, "read-only")})[#elseif input.required][@clay["icon"] className="reference-mark" symbol="asterisk" /][/#if]
+		</label>
+
+		<liferay-slider-input 
+			name="${input.name}"
+			fragment-entry-link-namespace="${fragmentEntryLinkNamespace}"
+			value="${input.value?has_content?then(input.value, configuration.defaultValue)}"
+			max="${configuration.max}"
+			min="${configuration.min}"
+			step="${configuration.step}"
+			unit="${configuration.unit}"
+			aria-describedby="${fragmentEntryLinkNamespace}-numeric-input-help-text"
+			aria-labelledby="${fragmentEntryLinkNamespace}-numeric-input-label [#if input.errorMessage?has_content]${fragmentEntryLinkNamespace}-numeric-input-error-message[/#if]"
+		/>
+
+		[#if input.errorMessage?has_content]
+			<p class="font-weight-semi-bold mt-1 text-danger" id="${fragmentEntryLinkNamespace}-numeric-input-error-message">
+				<svg class="lexicon-icon lexicon-icon-info-circle" focusable="false" role="presentation">
+					<use xlink:href="${siteSpritemap}#info-circle" />
+				</svg>
+
+				<span>
+					${input.errorMessage}
+				</span>
+			</p>
+		[/#if]
+
+		[#if input.showHelpText && input.helpText?has_content]
+			<p class="mb-0 mt-1 text-secondary" id="${fragmentEntryLinkNamespace}-numeric-input-help-text">${htmlUtil.escape(input.helpText)}</p>
+		[/#if]
+	</div>
+</div>

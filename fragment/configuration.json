@@ -1,0 +1,48 @@
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+					"dataType": "int",
+					"defaultValue": "0",
+					"label": "default-value",
+					"localizable": false,
+					"name": "defaultValue",
+					"type": "text"
+				},
+				{
+					"dataType": "int",
+					"defaultValue": "0",
+					"label": "min",
+					"localizable": false,
+					"name": "min",
+					"type": "text"
+				},
+				{
+					"dataType": "int",
+					"defaultValue": "100",
+					"label": "max",
+					"localizable": false,
+					"name": "max",
+					"type": "text"
+				},
+				{
+					"dataType": "int",
+					"defaultValue": "1",
+					"label": "step",
+					"localizable": false,
+					"name": "step",
+					"type": "text"
+				},
+				{
+					"dataType": "string",
+					"defaultValue": "",
+					"label": "unit",
+					"localizable": true,
+					"name": "unit",
+					"type": "text"
+				}
+			]
+		}
+	]
+}
